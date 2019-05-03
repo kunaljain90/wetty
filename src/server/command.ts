@@ -50,6 +50,10 @@ export default (
 
 function parseCommand(command: string, path?: string): string {
   if (command === 'login' && path === undefined) return '';
+  console.log('start: in parse command');
+  console.log(command);
+  console.log(path);
+  console.log('end: in parse command');
   return path !== undefined
     ? `$SHELL -c "cd ${path};${command === 'login' ? '$SHELL' : command}"`
     : command;
